@@ -27,6 +27,27 @@
   <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Override Arsha hero defaults that hide our content -->
+  <style>
+    /* Force hero text visible — Arsha's style.css sets color:transparent on typed text */
+    #hero h1, #hero h2, #hero p, #hero span, #hero div { visibility: visible !important; opacity: 1 !important; }
+    #hero .typed, #hero .typed-cursor { display: none !important; }
+    /* Arsha sets #hero h1 font-size very large and color white via its own rules — override */
+    #hero h1 { font-size: 3.2rem !important; color: #ffffff !important; font-family: 'Playfair Display', serif !important; }
+    #hero h1 span { color: var(--gold) !important; }
+    #hero h2 { font-size: 1.15rem !important; color: rgba(255,255,255,0.75) !important; font-family: 'DM Sans', sans-serif !important; font-weight: 300 !important; }
+    /* Fix navbar — Arsha shows mobile nav open by default on some viewports */
+    .navbar { display: flex !important; align-items: center !important; }
+    @media (max-width: 991px) {
+      #navbar ul { display: none; }
+      #navbar.navbar-mobile ul { display: block; }
+    }
+    @media (min-width: 992px) {
+      #navbar ul { display: flex !important; }
+      .mobile-nav-toggle { display: none !important; }
+    }
+  </style>
+
   <style>
     :root {
       --navy: #0d1b3e;
@@ -973,13 +994,13 @@
   </header>
 
   <!-- ======= Hero ======= -->
-  <section id="hero">
-    <div class="container hero-container">
+  <section id="hero" style="background:linear-gradient(135deg,#0a1628 0%,#0d1b3e 50%,#1a2d5a 100%) !important;min-height:100vh !important;display:flex !important;align-items:center !important;">
+    <div class="container hero-container" style="padding-top:100px;padding-bottom:60px;">
       <div class="row align-items-center">
         <div class="col-lg-7" data-aos="fade-right">
           <span class="hero-badge">33+ Years of Enterprise IT Knowledge</span>
-          <h1>Beyond ERP.<br><span>Real-World Expertise.</span></h1>
-          <h2>Digital Transformation Leader</h2>
+          <h1 style="font-family:'Playfair Display',serif!important;font-size:3rem!important;font-weight:700!important;color:#ffffff!important;line-height:1.2!important;margin-bottom:16px!important;">Beyond ERP.<br><span style="color:#c9a84c!important;">Real-World Expertise.</span></h1>
+          <h2 style="font-family:'DM Sans',sans-serif!important;font-size:1.1rem!important;font-weight:300!important;color:rgba(255,255,255,0.75)!important;letter-spacing:2px!important;text-transform:uppercase!important;margin-bottom:24px!important;">Digital Transformation Leader</h2>
           <p>Senior IT consultant specializing in ERP implementations, Healthcare Information Systems, Campus Management, and AI-driven enterprise solutions. Turning complex technology challenges into measurable business outcomes.</p>
           <div>
             <a href="#services" class="btn-gold scrollto">Explore Services</a>
